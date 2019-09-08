@@ -1,16 +1,12 @@
 <template>
-  <div id="app" class="app">
-    <router-view></router-view>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Me</router-link> |
+      <router-link to="/report/week/1">Week 1</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
-//import Me from './components/Me.vue'
-
-export default {
-  name: 'app',
-}
-</script>
 
 <style>
 @import url('https://rsms.me/inter/inter-ui.css');
