@@ -1,10 +1,12 @@
 <template>
-<main>
+<div>
     <Nav />
-    <h1>Me</h1>
-    <p>{{ text }}</p>
-    <p>{{ desc }}</p>
-</main>
+    <main>
+        <h1>Me</h1>
+        <p>{{ text }}</p>
+        <p>{{ desc }}</p>
+    </main>
+</div>
 </template>
 
 <script>
@@ -29,7 +31,7 @@ export default {
     getMe() {
       let that = this;
       that.text = "Hej och välkommen till början av min Me-sida i kursen JSramverk!";
-      that.desc = "Jag heter Jonathan Lindh och siktar just nu på att lära mig skriva akademiskt och knåpa ihop en grundläggande app i Javascriptramverket Vue.";
+      that.desc = "Jag heter Jonathan och siktar just nu på att lära mig skriva akademiskt och knåpa ihop en enkel app i Javascriptramverket Vue som förhoppningsvis kommer växa lite med tiden.";
     }
   }
 }

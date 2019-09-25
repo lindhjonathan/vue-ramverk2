@@ -1,41 +1,58 @@
 <template>
-<main>
+<div>
     <Nav />
-    <h2>README</h2>
-    <VueShowdown :markdown="fileContent"></VueShowdown>
-    <p class="question">{{ github }}</p>
-</main>
-
+    <main>
+        <h2>README</h2>
+        <markdown-it-vue class="md-body" :content="content"/>
+        <hr>
+        <a href="https://github.com/lindhjonathan/vue-ramverk2">Find me on Github!</a>
+    </main>
+</div>
 </template>
 
 <script>
 import Nav from './Nav.vue'
-import VueShowdown from "vue-showdown"
+import MarkdownItVue from 'markdown-it-vue'
+import 'markdown-it-vue/dist/markdown-it-vue.css'
 
 export default {
   name: 'Report',
   components: {
     Nav,
-    VueShowdown,
+    MarkdownItVue
   },
   data() {
     return {
-      fileContent: null,
-      rawContent: null,
-      github: ""
+      content: null
     }
   },
   mounted() {
-    this.getGithub();
+    this.getReadme();
   },
   methods: {
     getReadme() {
-        this.readme = "Hello readme";
-  },
-    getGithub() {
-        this.github = "git link";
-    }
+        this.content = `# me
 
+## Project setup
+
+npm install
+
+### Compiles and hot-reloads for development
+npm run serve
+
+### Compiles and minifies for production
+npm run build
+
+### Run your tests
+npm run test
+
+### Lints and fixes files
+npm run lint
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+        `;
+  },
   }
 }
 </script>
@@ -44,9 +61,5 @@ export default {
 <style scoped>
 h2 {
   text-transform: uppercase;
-}
-
-.question {
-  margin-bottom: 2em;
 }
 </style>
